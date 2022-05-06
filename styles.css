@@ -1,0 +1,36 @@
+:root {
+    --dark: #374151;
+    -darker: #1f2937;
+    --darkest: #111827;
+    --grey: #6b7280;
+    --light: #eee;
+    --pink: #ec4899;
+    --purple: #8b5cf6;
+    --white: #fff;
+}
+body {
+    
+}
+
+table {
+    width: 80%;
+    margin: 40px auto;
+    background: var(--purple);
+}
+
+table.list {
+    text-align: center;
+    width: 100%;
+}
+
+td{
+    border: 1px solid var(--grey);
+    text-align: left;
+    padding: 8px 15px;
+}
+
+tr:nth-child(even), table.list thread> tr{
+    background-color: var(--light);
+}
+
+input[type="text"],input[type="number"]
