@@ -7,8 +7,9 @@ function onFormSubmit(e){
         insertNewRecord(formData);
     }
     else{
-
+        updateRecord(formData);
     }
+    resetForm();
 }
 
 //Retrieve the Data
@@ -65,4 +66,56 @@ function insertNewRecord(data){
 
     var cell10 = newRow.insertCell(10);
         cell10.innerHTML = '<button>Edit</button> <button>Delete</button>'
+}
+
+//Edit the data
+function onEdit(td) {
+    selectedRow = td.parentElement.parentElement;
+    document.getElementById("firstName").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("middleName").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("lastName").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("phoneNumber").value = selectedRow.cells[3].innerHTML;
+    document.getElementById("email").value = selectedRow.cells[4].innerHTML;
+    document.getElementById("address").value = selectedRow.cells[5].innerHTML;
+    document.getElementById("dob").value = selectedRow.cells[6].innerHTML;
+    document.getElementById("city").value = selectedRow.cells[7].innerHTML;
+    document.getElementById("state").value = selectedRow.cells[8].innerHTML;
+    document.getElementById("zip").value = selectedRow.cells[9].innerHTML;
+}
+function updateRecord(formData) {
+    selectedRow.cells[0].innerHTML = formData.firstName;
+    selectedRow.cells[1].innerHTML = formData.middleName;
+    selectedRow.cells[2].innerHTML = formData.lastName;
+    selectedRow.cells[3].innerHTML = formData.phoneNumber;
+    selectedRow.cells[4].innerHTML = formData.email;
+    selectedRow.cells[5].innerHTML = formData.address;
+    selectedRow.cells[6].innerHTML = formData.dob;
+    selectedRow.cells[7].innerHTML = formData.city;
+    selectedRow.cells[8].innerHTML = formData.state;
+    selectedRow.cells[9].innerHTML = formData.zip;
+}
+
+//Delete the data
+function onDelete(td) {
+    if (confirm('Do you want to delete this record?')) {
+        row = td.parentElement.parentElement;
+        document.getElementById('storedList').deleteRow(row.rowIndex);
+        resetForm();
+    }
+}
+
+//Reset the data
+function resetForm() {
+    document.getElementById("firstName").value = '';
+    document.getElementById("middleName").value = '';
+    document.getElementById("lastName").value = '';
+    document.getElementById("phoneNumber").value = '';
+    document.getElementById("email").value = '';
+    document.getElementById("address").value = '';
+    document.getElementById("dob").value = '';
+    document.getElementById("city").value = '';
+    document.getElementById("state").value = '';
+    document.getElementById("zip").value = '';
+    
+    selectedRow = null;
 }
