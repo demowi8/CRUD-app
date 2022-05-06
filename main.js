@@ -1,10 +1,13 @@
-var selectedRow = null;
-function onFormSubmit(event){
-    event.preventDefault();
+var selectedRow = null 
+
+function onFormSubmit(e){
+    e.preventDefault();
     var formData = readFormData();
-    if(selectedRow === null){
+    if(selectedRow == null){
         insertNewRecord(formData);
-        return;
+    }
+    else{
+
     }
 }
 
@@ -21,42 +24,45 @@ function readFormData(){
     formData["city"] = document.getElementById("city").value;
     formData["state"] = document.getElementById("state").value;
     formData["zip"] = document.getElementById("zip").value;
+    
+    return formData;
 }
 
 //Insert new Data
 function insertNewRecord(data){
-    var table = document.getElementById("storedList").getElementsByTagName('tbody')[0];
+    var table = document.getElementById('storedList').getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
+
     var cell0 = newRow.insertCell(0);
-    cell1.innerHTML = data.firstName;
+        cell0.innerHTML = data.firstName;
 
     var cell1 = newRow.insertCell(1);
-    cell2.innerHTML = data.middleName;
+        cell1.innerHTML = data.middleName;
 
     var cell2 = newRow.insertCell(2);
-    cell3.innerHTML = data.lastName;
+        cell2.innerHTML = data.lastName;
 
     var cell3 = newRow.insertCell(3);
-    cell1.innerHTML = data.phoneNumber;
+        cell3.innerHTML = data.phoneNumber;
 
     var cell4 = newRow.insertCell(4);
-    cell1.innerHTML = data.email;
+        cell4.innerHTML = data.email;
 
     var cell5 = newRow.insertCell(5);
-    cell1.innerHTML = data.address;
+        cell5.innerHTML = data.address;
 
     var cell6 = newRow.insertCell(6);
-    cell1.innerHTML = data.dob;
+        cell6.innerHTML = data.dob;
 
     var cell7 = newRow.insertCell(7);
-    cell1.innerHTML = data.city;
+        cell7.innerHTML = data.city;
 
     var cell8 = newRow.insertCell(8);
-    cell1.innerHTML = data.state;
+        cell8.innerHTML = data.state;
 
     var cell9 = newRow.insertCell(9);
-    cell1.innerHTML = data.zip;
+        cell9.innerHTML = data.zip;
 
     var cell10 = newRow.insertCell(10);
-    cell10.innerHTML = '<button>Edit</button> <button>Delete</button>'
+        cell10.innerHTML = '<button>Edit</button> <button>Delete</button>'
 }
