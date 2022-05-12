@@ -10,6 +10,7 @@
 }
 body {
     background-color: var(--grey);
+    display:flexbox;
 }
 
 table {
@@ -63,17 +64,10 @@ input[type="reset"]:hover{
     opacity: 60%;
 }
 
-button{
-    background: var(--dark);
-    padding: 12px 20px;
-    margin: 15px 0 10px;
-    display: inline-block;
-    border: 2px solid var(--darkest);
-    border-radius: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    outline: none;
-}
-button:hover{
+input:hover{
     opacity: 60%;
+}
+tbody{
+    border: 1px solid var(--darkest);
+     
 }
