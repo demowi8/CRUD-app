@@ -33,7 +33,7 @@ td{
     background: var(--purple);
 }
 
-tr:nth-child(even), table.list thread> tr{
+tr:nth-child(even), table.list thead> tr{
     background-color: var(--light);
 }
 

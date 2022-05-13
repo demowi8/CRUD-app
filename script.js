@@ -67,7 +67,7 @@ function insertNewRecord(data){
         
      cell10 = newRow.insertCell(10);
         cell10.innerHTML = `<button onClick="onEdit(this)">Edit</button> <button onClick="onDelete(this)">Delete</button>`;
-    };
+    }
     
     //Edit the data
     function onEdit(td) {
